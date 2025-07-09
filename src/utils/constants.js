@@ -15,4 +15,6 @@ export const NOW_PLAYING = {
 
 export const TMDB_IMAGE_URL = "https://image.tmdb.org/t/p/w500";
 
+export const NETFLIX_BACKGROUND = "https://assets.nflxext.com/ffe/siteui/vlv3/8200f588-2e93-4c95-8eab-ebba17821657/web/US-en-20250616-TRIFECTA-perspective_f4dc670c-a46e-493c-87b4-4be1ccba5a25_small.jpg"
 
+export const SUPPORTED_LANG = [{identifier:"en", name:"English"}, {identifier:"es", name:"Spanish"}, {identifier:"hi", name:"Hindi"}]

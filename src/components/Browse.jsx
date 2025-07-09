@@ -6,6 +6,7 @@ import useUpcomingMovies from "../hooks/useUpcomingMovies";
 import MainContainer from "./MainContainer";
 import SecondContainer from "./SecondContainer";
 import GptSearch from "./GptSearch";
+import { useSelector } from "react-redux";
 
 
 
@@ -25,16 +26,13 @@ const Browse = () => {
             {/* <h1>Browse</h1> */}
             <Header/>
 {
-    showGptSearch? (<GptSearch/>) 
+    showGptSearch? (<GptSearch/>) : <><MainContainer/>
+            <SecondContainer/> </> 
 }
-
-            <GptSearch/>
-            <MainContainer/>
-            <SecondContainer/>
+            
 
         </div>
     );
-
 }
 
 export default Browse;

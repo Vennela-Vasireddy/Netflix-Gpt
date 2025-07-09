@@ -6,6 +6,7 @@ import { auth } from '../utils/firebase';
 import { updateProfile } from 'firebase/auth/web-extension';
 import { useDispatch } from 'react-redux';
 import { addUser, removeUser } from '../utils/userSlice';
+import { NETFLIX_BACKGROUND } from '../utils/constants';
 
 const Login = () => {
 
@@ -86,7 +87,7 @@ const toggleSignInForm = () => {
         <Header/>
         <div className="absolute blur-none"> 
             
-            <img src="https://assets.nflxext.com/ffe/siteui/vlv3/8200f588-2e93-4c95-8eab-ebba17821657/web/US-en-20250616-TRIFECTA-perspective_f4dc670c-a46e-493c-87b4-4be1ccba5a25_small.jpg" alt="background-image" />
+            <img src={NETFLIX_BACKGROUND} alt="background-image" />
            
     </div>
             <form onSubmit={(e) => e.preventDefault()} className="w-4/12 absolute bg-black p-12 my-28 mx-auto right-0 left-0 text-white opacity-84 rounded-lg">
