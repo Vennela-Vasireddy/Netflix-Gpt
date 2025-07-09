@@ -6,6 +6,7 @@ import react, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { NETFLIX, USER_LOGO } from "../utils/constants";
+import { toggleGptSearchView } from "../utils/gptSlice";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -17,6 +18,10 @@ signOut(auth).then(() => {
 }).catch((error) => {
   navigate('/error');
 });
+}
+
+const handleGptSearchView = () => {
+    dispatch(toggleGptSearchView());
 }
 
 useEffect(
@@ -52,7 +57,13 @@ return () => unsubscribe();
 
      { user && <div className="flex items-center gap-4 p-2">
 
-        <img className="w-8 h-8" src={USER_LOGO} ></img>
+        <button className=" flex gap-1 p-1.5 font-bold text-black rounded cursor-pointer bg-white" 
+        onClick={handleGptSearchView}> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+</svg>
+ GPT Search </button>
+
+        <img className="w-8 h-8 cursor-pointer" src={USER_LOGO} ></img>
 
 <button className="p-2 font-bold text-white rounded cursor-pointer" onClick={handleSignOut} > Sign Out  </button>
 
