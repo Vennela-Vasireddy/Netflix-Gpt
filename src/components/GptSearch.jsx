@@ -5,7 +5,7 @@ import GptSearchSuggestion from "./GptSearchSuggestion";
 const GptSearch = () => {
     return (
         <div>
-            <div className="absolute blur-xs">                          
+            <div className="fixed blur-xs">                          
                 <img  src={NETFLIX_BACKGROUND}/>
             </div>
  
