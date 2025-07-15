@@ -1,8 +1,8 @@
 import { usedispatch, useSelector } from "react-redux";
 import lang from "../utils/languageConstants";
-import {useRef} from "react"
+import {useRef} from "react";
 import openapi from "../utils/openApi";
-import NOW_PLAYING from "../utils/constants"
+import NOW_PLAYING from "../utils/constants";
 import { addGptMovieResult } from "../utils/gptSlice";
 
 
@@ -46,8 +46,8 @@ const gptQuery = "Act as a movie recommendation system and suggest me based on t
 
     return (
 
-        <div className="pt-[12%] flex justify-center" onSubmit={(e) => e.preventDefault()}>
-            <form className="w-1/2 bg-black grid grid-cols-12 rounded-md">
+        <div className="pt-[35%] flex justify-center" onSubmit={(e) => e.preventDefault()}>
+            <form className="w-full md:w-1/2 bg-black grid grid-cols-12 rounded-md">
                 <input ref={searchText} className="m-2 p-3 col-span-9 bg-white rounded-md" type="text" placeholder= {lang[langKey].gptSearchPlaceholder} />
                 <button className="bg-red-700 text-white rounded-md col-span-3 m-2 p-2 px-4" onClick={handleSearch} >  {lang[langKey].search}</button>
             </form>

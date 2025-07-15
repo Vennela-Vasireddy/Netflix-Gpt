@@ -6,7 +6,7 @@ const GptSearch = () => {
     return (
         <div>
             <div className="fixed blur-xs">                          
-                <img  src={NETFLIX_BACKGROUND}/>
+                <img className="h-screen object-cover"  src={NETFLIX_BACKGROUND}/>
             </div>
  
             <div  className="relative"> 
