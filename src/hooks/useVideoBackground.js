@@ -5,7 +5,10 @@ import { NOW_PLAYING } from "../utils/constants";
 
 
 const useVideoBackground = (movieId) => {
+  const trailer = useSelector((store) => store.movies.trailerVideo);
+
     const dispatch = useDispatch();
+
     const getMovieVideos =  async() => 
     {  
         const result = await fetch('https://api.themoviedb.org/3/movie/' + movieId + '/videos?language=en-US', NOW_PLAYING )
@@ -22,7 +25,7 @@ const useVideoBackground = (movieId) => {
     }
     
     useEffect(() => { 
-      getMovieVideos();
+      !trailer && getMovieVideos();
     }, [])
   
 };
