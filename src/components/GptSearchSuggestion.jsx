@@ -1,4 +1,6 @@
 import MovieList from "./MovieList"
+import { useSelector } from 'react-redux';
+
 
 const GptSearchSuggestion = () => {
 

@@ -19,4 +19,7 @@ export const NETFLIX_BACKGROUND = "https://assets.nflxext.com/ffe/siteui/vlv3/82
 
 export const SUPPORTED_LANG = [{identifier:"en", name:"English"}, {identifier:"es", name:"Spanish"}, {identifier:"hi", name:"Hindi"}]
 
-export const OPENAPI_KEY = process.env.REACT_APP_OPENAPI_KEY
+export const OPENAPI_KEY = import.meta.env.VITE_REACT_APP_OPENAPI_KEY
+           console.log("ENV test:", import.meta.env)
+
+console.log("Loaded OPENAPI_KEY:", OPENAPI_KEY);

@@ -1,14 +1,16 @@
-import { usedispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import lang from "../utils/languageConstants";
 import {useRef} from "react";
-import openapi from "../utils/openApi";
-import NOW_PLAYING from "../utils/constants";
+import openai from "../utils/openai";
+import {NOW_PLAYING} from "../utils/constants";
+
+
 import { addGptMovieResult } from "../utils/gptSlice";
 
 
 const GptSearchBar = () => {
 
-    const dispatch = usedispatch();
+    const dispatch = useDispatch();
     const langKey = useSelector((store) => store.config.lang)
     const searchText = useRef(null);
 
@@ -25,7 +27,7 @@ const searchMovieTmdb = async(movie) => {
 const gptQuery = "Act as a movie recommendation system and suggest me based on this query: " +  searchText.current.value
  + ". Only give me top 5 movies names in a comma seperated fashion, for example: golamal, don, guru, sakhi, fashion"
 
-        const gptResults = await openapi.chat.completions.create({
+        const gptResults = await openai.chat.completions.create({
             messages: [{role: "user", content: gptQuery}],
             model: "gpt-3.5-turbo"
         })
@@ -46,10 +48,10 @@ const gptQuery = "Act as a movie recommendation system and suggest me based on t
 
     return (
 
-        <div className="pt-[35%] flex justify-center" onSubmit={(e) => e.preventDefault()}>
-            <form className="w-full md:w-1/2 bg-black grid grid-cols-12 rounded-md">
+        <div className="pt-[12%] flex justify-center" onSubmit={(e) => e.preventDefault()}>
+            <form className="w-1/2 bg-black grid grid-cols-12 rounded-md">
                 <input ref={searchText} className="m-2 p-3 col-span-9 bg-white rounded-md" type="text" placeholder= {lang[langKey].gptSearchPlaceholder} />
-                <button className="bg-red-700 text-white rounded-md col-span-3 m-2 p-2 px-4" onClick={handleSearch} >  {lang[langKey].search}</button>
+                <button className="bg-red-700 text-white rounded-md col-span-3 m-2 p-2 px-4 cursor-pointer" onClick={handleSearch} >  {lang[langKey].search}</button>
             </form>
         </div>
     );

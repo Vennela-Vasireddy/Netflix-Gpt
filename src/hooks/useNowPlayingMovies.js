@@ -19,7 +19,7 @@ const nowPlayingFunction = async() => {
 
 
 useEffect(() => {
-   !movies && nowPlayingFunction();
+   movies && nowPlayingFunction();
 }, []);
 
     // This hook is used to fetch and manage the now playing movies

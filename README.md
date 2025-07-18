@@ -25,3 +25,16 @@ fetch data for trailer video
 update store with trailer video data
 embedded the youtube video and make it autoplay and mute
 tailwind classes to add css to the maincontainer
+Built Secondary component
+Added Movie List and Movie Card
+TMDB Image CDN Url
+Moved code to create custon hooks
+Gpt Search Bar and Page
+Added Multi Language feature
+Gpt Open AI api key, API call
+Fetched gpt movie suggestions
+Memoization
+Added .ENV file to gitignore
+Made the application responsive
+
+

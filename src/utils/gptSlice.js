@@ -6,7 +6,7 @@ name: 'gpt',
   initialState: {
     showGptSearch: false,
     movieNames: null,
-     movieResults: null
+    movieResults: null
 
   },
   reducers: {
@@ -15,9 +15,9 @@ name: 'gpt',
     },
 
     addGptMovieResult: () => {
-      const[movieNames, movieResults] = action.payload;
-      movieNames = action.movieNames
-      movieResults = action.movieResults
+      const {movieNames, movieResults} = action.payload;
+      state.movieNames = action.movieNames
+      state.movieResults = action.movieResults
 
     }
 
