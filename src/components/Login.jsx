@@ -87,10 +87,10 @@ const toggleSignInForm = () => {
         <Header/>
         <div className="absolute blur-none"> 
             
-            <img  src={NETFLIX_BACKGROUND} alt="background-image" />
+            <img className="h-screen object-cover md:h-auto md:object-none" src={NETFLIX_BACKGROUND} alt="background-image" />
            
     </div>
-            <form onSubmit={(e) => e.preventDefault()} className="w-4/12 absolute bg-black p-12 my-28 mx-auto right-0 left-0 text-white opacity-84 rounded-lg">
+            <form onSubmit={(e) => e.preventDefault()} className="w-full md:w-4/12 absolute bg-black p-12 my-28 mx-auto right-0 left-0 text-white opacity-84 rounded-lg">
             <h1 className="font-bold text-3xl py-4">
 {showSignInForm? "Sign In": "Sign Up"}
 
